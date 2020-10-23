@@ -1,0 +1,51 @@
+<html>
+  <head>
+    <title>Transfer</title>
+    <link rel="stylesheet" href="homepageStyle.css">
+  </head>
+  <body>
+
+    <h1>Transfer</h1>
+    <hr>
+
+    <div class="nav_bar">
+      <nav>
+        <a href="#">Home</a> |
+        <a href="#">Balance</a> |
+        <a href="#">Deposit</a> |
+        <a href="#">Withdraw</a> |
+        <a href="#">Different Accounts</a> |
+        <a href="#">Account Info</a>
+      </nav>
+    </div>
+
+    <div class="dropdown">
+        <button class="dropbtn">Transfer from
+          <i class="fa fa-caret-down"></i>
+        </button>
+        <div class="dropdown-content">
+          <a href="#">Checking 1</a>
+          <a href="#">Savings 1</a>
+          <a href="#">Checking 2</a>
+        </div>
+    </div>
+
+    <div class="dropdown">
+        <button class="dropbtn">Transfer to
+          <i class="fa fa-caret-down"></i>
+        </button>
+        <div class="dropdown-content">
+          <a href="#">Checking 1</a>
+          <a href="#">Savings 1</a>
+          <a href="#">Checking 2</a>
+        </div>
+    </div>
+
+    <form action="/action_page.php">
+      <label for="amount">Amount:</label>
+      <input type="text" id="amount" name="amount"><br><br>
+      <input type="submit" value="Submit">
+    </form>
+
+  </body>
+</html>
