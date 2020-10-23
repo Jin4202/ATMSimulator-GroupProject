@@ -1,0 +1,38 @@
+<html>
+  <head>
+    <title>Open New Account</title>
+    <link rel="stylesheet" href="homepageStyle.css">
+  </head>
+  <body>
+
+    <h1>New Account</h1>
+    <hr>
+
+    <div class="nav_bar">
+      <nav>
+        <a href="#">Home</a> |
+        <a href="#">Balance</a> |
+        <a href="#">Deposit</a> |
+        <a href="#">Withdraw</a> |
+        <a href="#">Diffent Accounts</a> |
+        <a href="#">Account Info</a>
+      </nav>
+    </div>
+
+    <div class="NewAccount">
+      <label for="new_account" id="title"><h2>Opening New Account</h2></label>
+      <p>SSN:</p>
+      <form action="newaccount.php" method="post">
+        <input type="SSN" name="SSN">
+        <p>Choose Account Type:</p>
+        <input type="radio" id="checkings" name="type" value="check">
+        <label for="check">Checkings</label><br>
+        <input type="radio" id="female" name="type" value="save">
+        <label for="save">Savings</label><br>
+        <br>
+        <input type="submit">
+      </form>
+
+    </div>
+  </body>
+</html>
