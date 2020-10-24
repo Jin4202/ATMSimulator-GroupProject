@@ -22,3 +22,8 @@ div {
 #title {
   font-size: 20px;
 }
+
+#normalText {
+  font-size: 15px;
+  font-family: sans-serif;
+}
