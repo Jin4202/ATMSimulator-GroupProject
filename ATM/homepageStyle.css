@@ -27,3 +27,7 @@ div {
   font-size: 15px;
   font-family: sans-serif;
 }
+
+#delete {
+  color: red;
+}
