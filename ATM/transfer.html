@@ -42,11 +42,19 @@
         </div>
     </div>
 
-    <form action="/action_page.php">
+
+    <form action="/action_page.php"> <!-- write action page php later-->
       <label for="amount">Amount:</label>
       <input type="text" id="amount" name="amount"><br><br>
-      <input type="submit" value="Submit">
+      <input type="submit" onclick="myFunction()" value="Submit">
     </form>
+
+    <script>
+      function myFunction() {
+        alert("Transfer submitted.");
+        window.location.replace("home.html");
+      }
+    </script>
 
   </body>
 </html>
