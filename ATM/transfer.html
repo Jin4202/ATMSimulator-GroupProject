@@ -1,7 +1,7 @@
 <html>
   <head>
     <title>Transfer</title>
-    <link rel="stylesheet" href="homepageStyle.css">
+    <link rel="stylesheet" href="../homepageStyle.css">
   </head>
   <body>
 
@@ -10,7 +10,7 @@
 
     <div class="nav_bar">
       <nav>
-        <a href="index.html">Home</a> |
+        <a href="../index.html">Home</a> |
         <a href="Balance.html">Balance</a> |
         <a href="deposit.html">Deposit</a> |
         <a href="withdraw.html">Withdraw</a> |
@@ -42,11 +42,19 @@
         </div>
     </div>
 
-    <form action="/action_page.php">
+
+    <form action="/action_page.php"> <!-- write action page php later-->
       <label for="amount">Amount:</label>
       <input type="text" id="amount" name="amount"><br><br>
-      <input type="submit" value="Submit">
+      <input type="submit" onclick="myFunction()" value="Submit">
     </form>
+
+    <script>
+      function myFunction() {
+        alert("Transfer submitted.");
+        window.location.replace("home.html");
+      }
+    </script>
 
   </body>
 </html>
