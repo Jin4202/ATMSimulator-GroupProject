@@ -13,7 +13,7 @@ column:
 * ssn
 * balance: INT
 
-###Creating DB through SQL
+### Creating DB through SQL
 CREATE DATABASE onlineatm\
 CREATE TABLE MyGuests (\
 email VARCHAR(255) NOT NULL  PRIMARY KEY,\
@@ -24,5 +24,5 @@ phone VARCHAR(255) NOT NULL,\
 ssn VARCHAR(255) NOT NULL\
 )
 
-###Inserting data
+### Inserting data
 INSERT INTO table_name (column1, column2, column3,...) VALUES (value1, value2, value3,...)\
