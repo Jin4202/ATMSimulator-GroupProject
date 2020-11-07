@@ -15,7 +15,7 @@ column:
 
 ### Creating DB through SQL
 CREATE DATABASE onlineatm\
-CREATE TABLE MyGuests (\
+CREATE TABLE accounts (\
 email VARCHAR(255) NOT NULL  PRIMARY KEY,\
 password VARCHAR(255) NOT NULL,\
 firstname VARCHAR(255) NOT NULL,\
@@ -25,4 +25,4 @@ ssn VARCHAR(255) NOT NULL\
 )
 
 ### Inserting data
-INSERT INTO table_name (column1, column2, column3,...) VALUES (value1, value2, value3,...)\
+INSERT INTO table_name (column1, column2, column3,...) VALUES (value1, value2, value3,...)
