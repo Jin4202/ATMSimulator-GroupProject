@@ -24,5 +24,5 @@ phone VARCHAR(255) NOT NULL,
 ssn VARCHAR(255) NOT NULL
 )</p>
 
-<p>Inserting data</p>
+<h3>Inserting data</h3>
 <p>INSERT INTO table_name (column1, column2, column3,...) VALUES (value1, value2, value3,...)</p>
