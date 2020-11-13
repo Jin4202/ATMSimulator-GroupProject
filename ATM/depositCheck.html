@@ -11,7 +11,7 @@
 
     <div class="nav_bar">
       <nav>
-        <a href="../index.html">Home</a> |
+        <a href="home.html">Home</a> |
         <a href="Balance.html">Balance</a> |
         <a href="deposit.html">Deposit</a> |
         <a href="withdraw.html">Withdraw</a> |
@@ -19,10 +19,22 @@
         <a href="Account Information.html">Account Info</a>
         <a href="signout.html"> Sign Out </a>
       </nav>
-    </div>
 
-    <center>
-    <h3>Deposit</h3>
+      <br><br>
+      <b>Please enter the exact amount on your check.</b>
+      <br><br>
+      <label for="checkAmount">Check Amount:</label><br>
+      <input type="text" id="checkAmount" name="checkAmount"><br>
+      <br>
+      <b>Now select your check to deposit.</b>
+      <br><br>
+      <form action="uploadCheck.php" method="post" enctype="multipart/form-data">
+        Select check image to upload:
+        <input type="file" name="fileToUpload" id="fileToUpload">
+        <br><br>
+        <input
+        <input type="submit" value="Upload Check" name="submit">
+      </form>
+</div>
 
-  </body>
 </html>

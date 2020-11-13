@@ -11,24 +11,20 @@
     <div class="nav_bar">
       <nav>
         <a href="index.html">Home</a> |
-        <a href="ATM/Balance.html">Balance</a> |
-        <a href="ATM/deposit.html">Deposit</a> |
-        <a href="ATM/withdraw.html">Withdraw</a> |
-        <a href="#">Different Accounts</a> | <!-- link? -->
-        <a href="ATM/Account Information.html">Account Info</a>
       </nav>
     </div>
 
     <div class="login">
       <label for="login_form" id="title">Log In</label>
-      <form class="login_form" action="index.html" method="post">
+      <form class="login_form" action="ATM/loginProcess.php" method="post">
         <label>
-          Username/Email: <input type="text" name="email" value="">
+          Username/Email: <input type="text" name="email">
         </label>
         <label>
-          Password: <input type="password" name="password" value="" >
+          Password: <input type="password" name="password">
         </label>
-        <button type="button" name="button" onclick="location.href='ATM/home.html'">Log in</button> <!--need change later; direct to home.html if log in is successfully-->
+        <input type="submit" value="login">
+          Log in</button> <!--need change later; direct to home.html if log in is successfully-->
       </form>
       <br>
       <p>Don't have an account?
