@@ -8,18 +8,8 @@
     <h1>Deposit</h1>
     <hr>
 
-    <div class="nav_bar">
-      <nav>
-        <a href="home.html">Home</a> |
-        <a href="Balance.html">Balance</a> |
-        <a href="deposit.html">Deposit</a> |
-        <a href="withdraw.html">Withdraw</a> |
-        <a href="#">Different Accounts</a> | <!-- link? -->
-        <a href="Account Information.html">Account Info</a> |
-        <a href="signout.html"> Sign Out </a>
-      </nav>
-    </div>
-<p> Which account would you like to deposit to? </p>
+    <div onlineATM-html="homepageTemplete.html"></div>
+    <p> Which account would you like to deposit to? </p>
 
     <select
 
@@ -31,7 +21,8 @@
     <br>
     <br>
     <button type="button" onclick="window.location.href='depositCheck.html'">
-      Deposit via Check</button>
+      Deposit via Check
+    </button>
 
     <br>
     <br>
@@ -45,4 +36,8 @@
 
 </form>
   </body>
+  <script src="templete.js"></script>
+  <script>
+    includeHTML();
+  </script>
 </html>

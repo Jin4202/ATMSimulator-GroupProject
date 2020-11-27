@@ -15,11 +15,11 @@ if ($conn->connect_error) {
   die("Connection failed: " . $conn->connect_error);
 }
 
-$sql = "SELECT email, password, firstname, lastname, phone, ssn, balance FROM accounts WHERE email = '$id'";
+$sql = "SELECT email, password, firstname, lastname, phone, ssn, balance, saving FROM accounts WHERE email = '$id'";
 $result = $conn->query($sql);
 if ($result) {
   $row = mysqli_fetch_assoc($result);
-  $user = array("email" => $row["email"], "password" => $row["password"], "firstname" => $row["firstname"], "lastname" => $row["lastname"], "phone" => $row["phone"], "ssn" => $row["ssn"], "balance" => $row["balance"]);
+  $user = array("email" => $row["email"], "password" => $row["password"], "firstname" => $row["firstname"], "lastname" => $row["lastname"], "phone" => $row["phone"], "ssn" => $row["ssn"], "balance" => $row["balance"], "type" => $row["saving"]);
   echo json_encode($user);
 } else {
   echo null;

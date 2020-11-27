@@ -8,18 +8,9 @@
 
     <h1>Online ATM</h1>
     <hr>
+    <div onlineATM-html="homepageTemplete.html"></div>
 
-    <div class="nav_bar">
-      <nav>
-        <a href="home.html">Home</a> |
-        <a href="Balance.html">Balance</a> |
-        <a href="deposit.html">Deposit</a> |
-        <a href="withdraw.html">Withdraw</a> |
-        <a href="#">Different Accounts</a> | <!-- link? -->
-        <a href="Account Information.html">Account Info</a> |
-        <a href="signout.html"> Sign Out </a>
-      </nav>
-
+    <div class="upload">
       <br><br>
       <b>Please enter the exact amount on your check.</b>
       <br><br>
@@ -35,6 +26,10 @@
         <input
         <input type="submit" value="Upload Check" name="submit">
       </form>
-</div>
-
+    </div>
+  </body>
+  <script src="templete.js"></script>
+  <script>
+    includeHTML();
+  </script>
 </html>

@@ -8,20 +8,10 @@
     <h1>Account Info</h1>
     <hr>
 
-    <div class="nav_bar">
-      <nav>
-        <a href="home.html">Home</a> |
-        <a href="Balance.html">Balance</a> |
-        <a href="deposit.html">Deposit</a> |
-        <a href="withdraw.html">Withdraw</a> |
-        <a href="#">Different Accounts</a> | <!-- link? -->
-        <a href="Account Information.html">Account Info</a> |
-        <a href="signout.html"> Sign Out </a>
-      </nav>
-    </div>
+    <div onlineATM-html="homepageTemplete.html"></div>
 
     <div class="acc_info", id="normalText">
-      <p> <span style = "font-weight: bold">Account Type:</span> Checking | Savings </p>
+      <p> <span style = "font-weight: bold">Account Type:</span> <span id="type"></span> </p>
       <label>Firstname: </label> <span id="fname"></span> <br>
       <label>Lastname: </label> <span id="lname"></span> <br>
       <label>Email: </label> <span id="email"></span> <br>
@@ -34,5 +24,8 @@
   </body>
   <script src = "../homepageScript.js"></script>
   <script src = "accountInformation.js"></script>
-<!-- WIP -->
+  <script src="templete.js"></script>
+  <script>
+    includeHTML();
+  </script>
 </html>

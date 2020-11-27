@@ -17,5 +17,13 @@ function setText(str) {
   document.getElementById("phone").innerHTML = user.phone;
   document.getElementById("ssn").innerHTML = user.ssn;
   document.getElementById("balance").innerHTML = user.balance;
+  let type;
+  if(user.type == 0) {
+    type = "Checking"
+  } else {
+    type = "Saving"
+  }
+
+  document.getElementById("type").innerHTML = type;
 
 }

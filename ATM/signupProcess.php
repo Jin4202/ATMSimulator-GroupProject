@@ -25,8 +25,9 @@
       $lname = $_POST['lname'];
       $phone = $_POST['phone'];
       $ssn = $_POST['ssn'];
+      $saving = intval($_POST['type']); // 0 is checking & 1 is saving
 
-      $sql = "INSERT INTO accounts (email, password, firstname, lastname, phone, ssn) VALUES ('$email', '$pw', '$fname', '$lname', '$phone', '$ssn')";
+      $sql = "INSERT INTO accounts (email, password, firstname, lastname, phone, ssn, saving) VALUES ('$email', '$pw', '$fname', '$lname', '$phone', '$ssn', '$saving')";
 
       if ($conn->query($sql) === TRUE) {
         $message = "Your account successfully created.";
