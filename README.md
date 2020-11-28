@@ -12,6 +12,7 @@ column:
 * phone
 * ssn
 * balance: INT
+* saving
 
 ### Creating DB through SQL
 CREATE DATABASE onlineatm\
@@ -21,8 +22,6 @@ password VARCHAR(255) NOT NULL,\
 firstname VARCHAR(255) NOT NULL,\
 lastname VARCHAR(255) NOT NULL,\
 phone VARCHAR(255) NOT NULL,\
-ssn VARCHAR(255) NOT NULL\
+ssn VARCHAR(255) NOT NULL,\
+saving TINYINT(1) \
 )
-
-### Inserting data
-INSERT INTO table_name (column1, column2, column3,...) VALUES (value1, value2, value3,...)
