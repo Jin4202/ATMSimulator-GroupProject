@@ -3,6 +3,35 @@ div {
   margin-left: 10px;
 }
 
+html {
+  background-color: #ff4242;
+}
+
+header img {
+  float: right;
+}
+
+a {
+  /* happens to all links */
+  text-decoration: none;
+  color: white;
+}
+
+a:hover {
+  /* happens when the mouse cursor is on the link */
+  color: green;
+}
+
+a:active {
+  /* happens when the link is being clicked */
+  color: yellow;
+}
+
+a:visited {
+  /* happens when the link is visited(after clicking on a link to a valid webpage) */
+  color: none;
+}
+
 .login {
   max-width: 300px;
   clear: both;
@@ -17,8 +46,12 @@ div {
   width: 60%;
   clear: both;
   float: right;
-
 }
+
+.nav_bar {
+  background-color: #d46326;
+}
+
 #title {
   font-size: 20px;
 }
@@ -29,5 +62,6 @@ div {
 }
 
 #delete {
+  background-color: black;
   color: red;
 }
