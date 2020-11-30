@@ -25,9 +25,24 @@
       $lname = $_POST['lname'];
       $phone = $_POST['phone'];
       $ssn = $_POST['ssn'];
-      $saving = intval($_POST['type']); // 0 is checking & 1 is saving
 
-      $sql = "INSERT INTO accounts (email, password, firstname, lastname, phone, ssn, saving) VALUES ('$email', '$pw', '$fname', '$lname', '$phone', '$ssn', '$saving')";
+      /**
+       *
+       */
+      class Account {
+        public $accountName = "account1";
+        public $type = "";
+        public $balance = 0;
+
+        function set_type($type) {
+          $this->type = $type;
+        }
+      }
+      $account = new Account();
+      $account->set_type($_POST['type']);
+      $accounts = json_encode(array($account));
+
+      $sql = "INSERT INTO accounts (email, password, firstname, lastname, phone, ssn, accountList) VALUES ('$email', '$pw', '$fname', '$lname', '$phone', '$ssn', '$accounts')";
 
       if ($conn->query($sql) === TRUE) {
         $message = "Your account successfully created.";
