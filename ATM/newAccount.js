@@ -30,7 +30,7 @@ function setText(str) {
     let name = accountList[i].accountName;
     htmls += "<option value=\""+ i +"\">"+ name +"</option>";
   }
-  document.getElementById("delete").innerHTML = htmls;
+  document.getElementById("accounts").innerHTML = htmls;
 }
 
 function edit() {
