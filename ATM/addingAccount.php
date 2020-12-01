@@ -26,12 +26,15 @@
 
     $ssn = $_POST["ssn"];
     class Account {
-      public $accountName = "account2";
+      public $accountName = "unnamed";
       public $type = "";
       public $balance = 0;
 
       function set_type($type) {
         $this->type = $type;
+      }
+      function set_accountName($str) {
+        $this->accountName = $str;
       }
     }
     $account = new Account();
@@ -44,6 +47,7 @@
       if ($row["ssn"] === $ssn) {
 
         $list = json_decode($row["accountList"]);
+        $account->set_accountName("Account".(count($list)+1));
         array_push($list, $account);
         $accountList = json_encode($list);
 

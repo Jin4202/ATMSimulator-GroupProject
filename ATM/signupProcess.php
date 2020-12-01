@@ -30,7 +30,7 @@
        *
        */
       class Account {
-        public $accountName = "account1";
+        public $accountName = "Account1";
         public $type = "";
         public $balance = 0;
 

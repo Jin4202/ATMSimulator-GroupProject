@@ -17,7 +17,7 @@ function setText(str) {
     let balance = account.balance;
     let type = account.type;
     htmls +=
-    "<tr><td><input type=\"text\" class=\"maInput\" name=\""+(i+1)+"\" value=\""+ accountName +"\" disabled></td> <td>"+ type +"</td> <td> $"+balance+"</td></tr>";
+    "<tr><td><input type=\"text\" class=\"maInput\" name=\""+(i)+"\" value=\""+ accountName +"\" disabled></td> <td>"+ type +"</td> <td> $"+balance+"</td></tr>";
   }
   htmls += "</table>"
   document.getElementsByClassName("managingTable")[0].innerHTML = htmls;
