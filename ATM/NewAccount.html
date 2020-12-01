@@ -25,9 +25,34 @@
         <br>
         <input type="submit">
       </form>
-
     </div>
+
+    <div class="ManageAccount">
+      <label for="new_account" id="title"><h2>Managing Accounts</h2></label>
+      <button type="button" onclick="edit()">Edit</button>
+        <form class="" action="index.html" method="post">
+          <div class="managingTable">
+          </div>
+          <button type="submit" class="maInput" onclick="" disabled>Save</button>
+        </form>
+    </div>
+
+    <div class="DeleteAccount">
+      <label for="new_account" id="title"><h2>Delete an Account</h2></label>
+      <p>Choose the account: </p>
+      <form class="" action="index.html" method="post">
+        <select id="" value="">
+          <option value="Checking1">Checking1</option>
+          <option value="Checking2">Checking2</option>
+          <option value="Checking3">Checking3</option>
+          <option value="Checking4">Checking4</option>
+        </select>
+        <button type="button" name="button">Delete</button>
+      </form>
+    </div>
+
   </body>
+    <script src = "newAccount.js"></script>
   <script src="templete.js"></script>
   <script>
     includeHTML();

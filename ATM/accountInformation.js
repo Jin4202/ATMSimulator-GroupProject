@@ -8,7 +8,7 @@ xmlhttp.open("GET", "userInfo.php", true);
 xmlhttp.send();
 
 function setText(str) {
-  console.log(str);
+  console.log(str); //remove
   var user = JSON.parse(str);
   document.getElementById("fname").innerHTML = user.firstname;
   document.getElementById("lname").innerHTML = user.lastname;
