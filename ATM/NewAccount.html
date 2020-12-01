@@ -1,25 +1,27 @@
 <html>
   <head>
-    <title>Open New Account</title>
+    <title>Accounts Information</title>
     <link rel="stylesheet" href="../homepageStyle.css">
   </head>
   <body>
 
-    <h1>New Account</h1>
+    <h1>Accounts Information</h1>
     <hr>
 
     <div onlineATM-html="homepageTemplete.html"></div>
 
     <div class="NewAccount">
       <label for="new_account" id="title"><h2>Opening New Account</h2></label>
-      <p>SSN:</p>
-      <form action="newaccount.php" method="post">
-        <input type="SSN" name="SSN">
+
+      <form action="addingAccount.php" method="post">
+        <label>SSN:</label>
+        <input type="text" name="ssn">
         <p>Choose Account Type:</p>
-        <input type="radio" id="checkings" name="type" value="check">
-        <label for="check">Checkings</label><br>
-        <input type="radio" id="female" name="type" value="save">
-        <label for="save">Savings</label><br>
+        <input type="radio" name="type" value="Checking">
+        <label for="checking"> Checking</label>
+        <br>
+        <input type="radio" name="type" value="Saving">
+        <label for="savings"> Savings </label>
         <br>
         <input type="submit">
       </form>
