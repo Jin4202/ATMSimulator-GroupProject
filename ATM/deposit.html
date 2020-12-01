@@ -9,32 +9,35 @@
     <hr>
 
     <div onlineATM-html="homepageTemplete.html"></div>
-    <p> Which account would you like to deposit to? </p>
+    <div>
+      <p> Which account would you like to deposit to? </p>
 
-    <select
+      <select
 
-    name="list" id="list" accesskey="target">
-        <option value='none' selected>Checking</option>
-        <option value="resume.html">Savings</option>
+      name="list" id="list" accesskey="target">
+          <option value='none' selected>Checking</option>
+          <option value="resume.html">Savings</option>
 
-    </select>
+      </select>
+      <br>
+      <br>
+      <button type="button" onclick="window.location.href='depositCheck.html'">
+        Deposit via Check
+      </button>
+
+      <br>
+      <br>
+
+    <button type="button" name="button">Virtual Deposit</button>
+
     <br>
-    <br>
-    <button type="button" onclick="window.location.href='depositCheck.html'">
-      Deposit via Check
-    </button>
 
-    <br>
-    <br>
+    <form action=""method="">
+      <input type="number" min="0" max="1000000">
 
-  <button type="button" name="button">Virtual Deposit</button>
+    </form>
+    </div>
 
-  <br>
-
-  <form action=""method="">
-    <input type="number" min="0" max="1000000">
-
-</form>
   </body>
   <script src="templete.js"></script>
   <script>

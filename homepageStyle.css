@@ -32,6 +32,13 @@ a:visited {
   color: none;
 }
 
+div{
+  text-align: center;
+}
+.managingTable {
+  text-align: center;
+}
+
 .login {
   max-width: 300px;
   clear: both;

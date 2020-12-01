@@ -28,3 +28,8 @@ function edit() {
     document.getElementsByClassName("maInput")[i].disabled = !document.getElementsByClassName("maInput")[i].disabled;
   }
 }
+
+function save() {
+
+
+}
