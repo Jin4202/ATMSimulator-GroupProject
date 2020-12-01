@@ -34,7 +34,7 @@
         <form action="changingAccountName.php" method="post">
           <div class="managingTable">
           </div>
-          <button type="submit" class="maInput" onclick="" disabled>Save</button>
+          <button type="submit" class="maInput" disabled>Save</button>
         </form>
     </div>
     </div>
@@ -42,19 +42,16 @@
     <div class="DeleteAccount">
       <label for="new_account" id="title"><h2>Delete an Account</h2></label>
       <p>Choose the account: </p>
-      <form class="" action="index.html" method="post">
-        <select id="" value="">
-          <option value="Checking1">Checking1</option>
-          <option value="Checking2">Checking2</option>
-          <option value="Checking3">Checking3</option>
-          <option value="Checking4">Checking4</option>
+      <form action="deleteAccount.php" method="post">
+        <select id="delete" name="index">
+
         </select>
-        <button type="button" name="button">Delete</button>
+        <button type="submit" name="button">Delete</button>
       </form>
     </div>
 
   </body>
-    <script src = "newAccount.js"></script>
+  <script src = "newAccount.js"></script>
   <script src="templete.js"></script>
   <script>
     includeHTML();

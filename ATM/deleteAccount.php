@@ -2,7 +2,7 @@
 <html lang="en" dir="ltr">
   <head>
     <meta charset="utf-8">
-    <title>Managing Accounts</title>
+    <title>Delete Account</title>
   </head>
   <body>
     <?php
@@ -28,24 +28,14 @@
       $row = mysqli_fetch_assoc($results);
 
       $list = json_decode($row["accountList"]);
-      for ($i=0; $i < count($list); $i++) {
-        $name = $_POST[strval($i)];
-        if(isset($name)) {
-          if($name != "") {
-            $list[$i]->accountName = $name;
-          } else {
-            echo "Invalid account name included.";
-          }
-        } else {
-          echo "Failed to editing accounts";
-        }
-      }
+      $index = $_POST["index"];
+      array_splice($list, $index, 1);
       $accountList = json_encode($list);
 
       $sql = "UPDATE accounts SET accountList='$accountList' WHERE email = '$id'";
 
       if ($conn->query($sql) === TRUE) {
-        $message = "Your accounts have successfully edited.";
+        $message = "Your account has successfully deleted.";
         echo "<script>alert('$message');</script>";
       } else {
         echo "Error: " . $sql . "<br>" . $conn->error;
