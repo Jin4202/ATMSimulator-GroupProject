@@ -72,3 +72,8 @@ div{
   background-color: black;
   color: red;
 }
+
+.centerTest {
+    width:100%;
+    text-align:center;
+}
