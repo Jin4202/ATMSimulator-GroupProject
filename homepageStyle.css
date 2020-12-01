@@ -77,3 +77,8 @@ div{
     width:100%;
     text-align:center;
 }
+
+.centerTable{
+  margin-left: auto;
+  margin-right: auto;
+}
