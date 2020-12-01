@@ -1,7 +1,7 @@
 <?php
   $id = $_COOKIE["username"];
   if(!isset($_COOKIE["username"])) {
-    echo "Cookie is not set!";
+    echo "Please log in first.";
   }
   $servername = "localhost";
   $username = "root";

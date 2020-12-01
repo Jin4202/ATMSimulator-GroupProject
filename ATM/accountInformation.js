@@ -26,7 +26,7 @@ function setText(str) {
     let balance = account.balance;
     let type = account.type;
     htmls +=
-    "<span style=\"font-weight:bold\">"+ accountName +"</span>  <span>"+ type +"</span><br><span>Balance: $ <span>"+ balance +"</span></span>";
+    "<span style=\"font-weight:bold\">"+ accountName +"</span>  <span>"+ type +"</span><br><span>Balance: $ <span>"+ balance +"</span></span> <br>";
   }
 
   document.getElementById("accountList").innerHTML = htmls;
