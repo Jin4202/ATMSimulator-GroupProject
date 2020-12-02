@@ -17,7 +17,7 @@
     if ($conn->connect_error) {
       die("Connection failed: " . $conn->connect_error);
     }
-    if (isset($_POST["email"]) && isset($_POST["password"]) && isset($_POST["fname"]) && isset($_POST["lname"]) && isset($_POST["phone"]) && isset($_POST["ssn"])) {
+    if (isset($_POST["email"]) && isset($_POST["password"]) && isset($_POST["fname"]) && isset($_POST["lname"]) && isset($_POST["phone"]) && isset($_POST["ssn"])&& isset($_POST["pin"])) {
       // collect value of input field
       $email = $_POST['email'];
       $pw = $_POST['password'];
@@ -25,6 +25,7 @@
       $lname = $_POST['lname'];
       $phone = $_POST['phone'];
       $ssn = $_POST['ssn'];
+      $pin = $_POST['pin'];
 
       /**
        *
@@ -42,7 +43,7 @@
       $account->set_type($_POST['type']);
       $accounts = json_encode(array($account));
 
-      $sql = "INSERT INTO accounts (email, password, firstname, lastname, phone, ssn, accountList) VALUES ('$email', '$pw', '$fname', '$lname', '$phone', '$ssn', '$accounts')";
+      $sql = "INSERT INTO accounts (email, password, firstname, lastname, phone, ssn, pin, accountList) VALUES ('$email', '$pw', '$fname', '$lname', '$phone', '$ssn', '$pin', '$accounts')";
 
       if ($conn->query($sql) === TRUE) {
         $message = "Your account successfully created.";

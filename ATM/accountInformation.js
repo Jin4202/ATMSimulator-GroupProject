@@ -16,6 +16,7 @@ function setText(str) {
   document.getElementById("pw").innerHTML = user.password;
   document.getElementById("phone").innerHTML = user.phone;
   document.getElementById("ssn").innerHTML = user.ssn;
+  document.getElementById("pin").innerHTML = user.pin;
 
 
   var accountList = user.accountList;
