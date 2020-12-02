@@ -11,4 +11,5 @@ column:
 * lastname: varchar(255)
 * phone: varchar(255)
 * ssn: varchar(255)
+* pin: varchar(255)
 * accountList: mediumtext
