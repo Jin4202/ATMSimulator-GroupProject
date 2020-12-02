@@ -13,9 +13,7 @@ function setText(str) {
   document.getElementById("fname").innerHTML = user.firstname;
   document.getElementById("lname").innerHTML = user.lastname;
   document.getElementById("email").innerHTML = user.email;
-  document.getElementById("pw").innerHTML = user.password;
   document.getElementById("phone").innerHTML = user.phone;
-  document.getElementById("ssn").innerHTML = user.ssn;
   document.getElementById("pin").innerHTML = user.pin;
 
 
