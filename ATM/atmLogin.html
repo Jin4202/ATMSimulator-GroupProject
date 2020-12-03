@@ -1,0 +1,41 @@
+<html>
+  <head>
+    <title>Online ATM</title>
+    <link rel="stylesheet" href="../homepageStyle.css">
+  </head>
+  <body>
+
+    <h1>Online ATM</h1>
+    <hr>
+
+    <div class="nav_bar">
+      <nav>
+        <a href="index.html">Home</a> |
+      </nav>
+    </div>
+
+    <div class="centerTest">
+    <div class="login">
+      <label for="login_form" id="title">Log In</label>
+      <form class="login_form" action="atmLoginProcess.php" method="post">
+        <label>
+          Username/Email: <input type="text" name="email">
+        </label>
+        <label>
+          Password: <input type="password" name="password">
+        </label>
+        <input type="submit" value="login">
+          Sign In: <!--need change later; direct to home.html if log in is successfully-->
+          <!-- why is </button> needed? I just want to know why -->
+      </form>
+      <br>
+      <p>Don't have an account?
+      <a href="ATM/Register.html"> Sign Up </a></p>
+    </div>
+  </div>
+  </body>
+  <script src="templete.js"></script>
+  <script>
+  includeHTML();
+  </script>
+</html>
