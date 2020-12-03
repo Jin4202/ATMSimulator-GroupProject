@@ -76,6 +76,21 @@ div{
   color: red;
 }
 
+#signUp {
+  color: #d46326;
+  font-weight: bold;
+}
+
+#signUp:hover {
+  /* happens when the mouse cursor is on the link */
+  color: green;
+}
+
+#signUp:active {
+  /* happens when the link is being clicked */
+  color: yellow;
+}
+
 .centerTest {
   width:100%;
   text-align:center;
