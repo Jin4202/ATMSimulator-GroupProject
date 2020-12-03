@@ -24,11 +24,13 @@
         die("Connection failed: " . $conn->connect_error);
       }
 
+      $accountType = ($_POST["list"])
       $money = intval($_POST["money"]);
+
       if($money < 0) {
             echo "Please type postive number.";
       } else {
-        echo "Please fill out the blanks";
+        echo "Please enter an amount";
       }
 
 
@@ -37,8 +39,5 @@
       <p>Back to the Deposit page.</p>
       <button type="button" onclick="window.location.href = 'deposit.html';">Back</button>
     </div>
-
-
-
   </body>
 </html>
