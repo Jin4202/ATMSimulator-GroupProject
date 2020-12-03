@@ -18,44 +18,48 @@
       die("Connection failed: " . $conn->connect_error);
     }
     if (isset($_POST["email"]) && isset($_POST["password"]) && isset($_POST["fname"]) && isset($_POST["lname"]) && isset($_POST["phone"]) && isset($_POST["ssn"])&& isset($_POST["pin"])) {
-      // collect value of input field
-      $email = $_POST['email'];
-      $pw = $_POST['password'];
-      $fname = $_POST['fname'];
-      $lname = $_POST['lname'];
-      $phone = $_POST['phone'];
-      $ssn = $_POST['ssn'];
-      $pin = $_POST['pin'];
+      if($_POST['email'] && $_POST['password'] && $_POST['fname'] && $_POST['lname'] && $_POST['phone'] && $_POST['ssn'] && $_POST['pin']) {
+        // collect value of input field
+        $email = $_POST['email'];
+        $pw = $_POST['password'];
+        $fname = $_POST['fname'];
+        $lname = $_POST['lname'];
+        $phone = $_POST['phone'];
+        $ssn = $_POST['ssn'];
+        $pin = $_POST['pin'];
 
-      $sql = "INSERT INTO global() VALUES ()";
-      if ($conn->query($sql) === TRUE) {
-        $accountNumber = $conn->insert_id;
-
-        class Account {
-          public $accountName = "Account1";
-          public $type = "";
-          public $balance = 0;
-          public $accountNumber = -1;
-
-          function set_type($type) {
-            $this->type = $type;
-          }
-        }
-        $account = new Account();
-        $account->set_type($_POST['type']);
-        $account->accountNumber = $accountNumber;
-        $accounts = json_encode(array($account));
-
-        $sql = "INSERT INTO accounts (email, password, firstname, lastname, phone, ssn, pin, accountList) VALUES ('$email', '$pw', '$fname', '$lname', '$phone', '$ssn', '$pin', '$accounts')";
-
+        $sql = "INSERT INTO global() VALUES ()";
         if ($conn->query($sql) === TRUE) {
-          $message = "Your account successfully created.";
-          echo "<script>alert('$message');</script>";
+          $accountNumber = $conn->insert_id;
+
+          class Account {
+            public $accountName = "Account1";
+            public $type = "";
+            public $balance = 0;
+            public $accountNumber = -1;
+
+            function set_type($type) {
+              $this->type = $type;
+            }
+          }
+          $account = new Account();
+          $account->set_type($_POST['type']);
+          $account->accountNumber = $accountNumber;
+          $accounts = json_encode(array($account));
+
+          $sql = "INSERT INTO accounts (email, password, firstname, lastname, phone, ssn, pin, accountList) VALUES ('$email', '$pw', '$fname', '$lname', '$phone', '$ssn', '$pin', '$accounts')";
+
+          if ($conn->query($sql) === TRUE) {
+            $message = "Your account successfully created.";
+            echo "<script>alert('$message');</script>";
+          } else {
+            echo "Error: " . $sql . "<br>" . $conn->error;
+          }
         } else {
-          echo "Error: " . $sql . "<br>" . $conn->error;
+          echo "Failed to connect to global table.";
         }
       } else {
-        echo "Failed to connect to global table.";
+        echo "Please fill in the blanks.";
       }
 
     } else {

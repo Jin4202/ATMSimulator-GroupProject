@@ -76,6 +76,6 @@
     ?>
 
     <p>Back to the Account Information page.</p>
-    <button type="button" onclick="window.location.href = &quot;NewAccount.html&quot;;">Back</button>
+    <button type="button" onclick="window.location.href = 'NewAccount.html';">Back</button>
   </body>
 </html>

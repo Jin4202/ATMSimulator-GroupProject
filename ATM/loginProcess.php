@@ -23,19 +23,23 @@
 
           if ($results) {
             $row = mysqli_fetch_assoc($results);
-            if ($row["password"] === $password) {
-              $logged_in = true;
-              setcookie("username", $username, time() + (86400 * 30), "/"); // = one day
-              echo "Successfully logged in. <br> Username and Password confirmed.";
-              header('Location: home.html');
+            if(isset($row["password"])) {
+              if ($row["password"] === $password) {
+                $logged_in = true;
+                setcookie("username", $username, time() + (86400 * 30), "/"); // = one day
+                echo "Successfully logged in. <br> Username and Password confirmed.";
+                header('Location: home.html');
+              } else {
+                echo "Incorrect password. Try again.";
+              }
+            } else {
+              echo "Can not find the username.";
             }
-            else {
-              echo "Incorrect password. Try again.";
-              //header('Location: History.go(-1)');
-            }
+          } else {
+            echo "Can not find the username.";
           }
         } else {
-            echo "Nothing was submitted.";
+          echo "Please fill in the blanks.";
         }
       }
     ?>
@@ -43,7 +47,7 @@
     <br>
     <br>
 
-    <button onclick="history.go(-1);">Go Back </button>
+    <button onclick="window.location.href ='../index.html'">Go Back </button>
 
   </body>
 </html>
