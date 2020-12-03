@@ -12,16 +12,16 @@
     <div class="upload">
       <form action="uploadCheck.php" method="post" enctype="multipart/form-data">
         <br><br>
-        <b>Please enter the exact amount on your check.</b>
+        <b><span class="textback">Please enter the exact amount on your check.</span></b>
         <br><br>
         <div id="accountList">
           </div>
-          <label for="money">Check Amount:</label><br>
+          <label for="money"><span class="textback">Check Amount:</span></label><br>
           <input type="number" name="money" min="0" max="1000000" value="0">
-          <br>
-          <b>Now select your check to deposit.</b>
           <br><br>
-          Select check image to upload:
+          <b><span class="textback">Now select your check to deposit.</span></b>
+          <br><br>
+          <span class="textback">Select check image to upload:</span>
           <input type="file" name="fileToUpload" id="fileToUpload">
           <br><br>
           <input type="submit" value="Upload Check" name="submit">
