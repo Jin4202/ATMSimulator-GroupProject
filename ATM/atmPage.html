@@ -9,21 +9,23 @@
     <hr>
 
     <div onlineATM-html="atmHomeTemplete.html"></div>
-    <div>
+
+    <div class="content">
       <label for="withdrawATM" id="title"><h2>Withdraw</h2></label>
 
-      <form action=""method="">
+      <form action="withdraw.php" method="post">
         <p>Which account would you like to withdraw from?</p>
-        <select id="accounts" name="index">
-          </select>
+        <div id="accountList"> </div>
+
         <p>Amount to be withdrawn</p>
-        <input type="number" min="0" max="100000">
-        <button type="submit" name="button" id="Withdrawal">Confirm Withdrawal</button>
-        </form>
+        <input type="text" name="wmoney" value="0">
+        <button type="submit" name="button">Confirm Withdrawal</button>
+      </form>
 
         </div>
 
     </body>
+    <script src="transfer.js"></script>
     <script src="templete.js"></script>
     <script>includeHTML();</script>
 
