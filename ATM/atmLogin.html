@@ -5,32 +5,33 @@
   </head>
   <body>
 
-    <h1>Online ATM</h1>
+    <h1><span class="textback">Online ATM</span></h1>
     <hr>
 
     <div class="nav_bar">
       <nav>
-        <a href="index.html">Home</a> |
+        <a href="index.html"><span class="textback">Home</span></a> |
       </nav>
     </div>
 
     <div class="centerTest">
     <div class="login">
-      <label for="login_form" id="title">Log In</label>
+      <label for="login_form" id="title"><span class="textback">Log In</span></label>
       <form class="login_form" action="atmLoginProcess.php" method="post">
         <label>
-          Username/Email: <input type="text" name="email">
+          <span class="textback">Username/Email: <input type="text" name="email"></span>
         </label>
         <label>
-          Password: <input type="password" name="password">
+          <span class="textback">Password: <input type="password" name="password"></span>
         </label>
         <input type="submit" value="login">
-          Sign In: <!--need change later; direct to home.html if log in is successfully-->
+          <span class="textback">Sign In: <!--need change later; direct to home.html if log in is successfully--></span>
           <!-- why is </button> needed? I just want to know why -->
       </form>
       <br>
-      <p>Don't have an account?
+      <p><span class="textback">Don't have an account?
       <a href="ATM/Register.html"> Sign Up </a></p>
+    </span>
     </div>
   </div>
   </body>
