@@ -8,7 +8,6 @@ xmlhttp.open("GET", "userInfo.php", true);
 xmlhttp.send();
 
 function setText(str) {
-  console.log(str); //remove
   var user = JSON.parse(str);
   document.getElementById("fname").innerHTML = user.firstname;
   document.getElementById("lname").innerHTML = user.lastname;
@@ -24,8 +23,8 @@ function setText(str) {
     let accountName = account.accountName;
     let balance = account.balance;
     let type = account.type;
-    htmls +=
-    "<span style=\"font-weight:bold\">"+ accountName +"</span>  <span>"+ type +"</span><br><span>Balance: $ <span>"+ balance +"</span></span> <br>";
+    let number = account.accountNumber;
+    htmls += "<span style=\"font-weight:bold\">"+ accountName +"</span>  <span>"+ type +"</span><br><span>Account Number: <span>"+number+"</span></span><br><span>Balance: $ <span>"+ balance +"</span></span> <br>";
   }
 
   document.getElementById("accountList").innerHTML = htmls;

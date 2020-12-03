@@ -10,13 +10,14 @@ xmlhttp.send();
 function setText(str) {
   var user = JSON.parse(str);
   var accountList = user.accountList;
-  var htmls = "<tr> <th>Name</th> <th>Type</th> <th>Balance</th> </tr>";
+  var htmls = "<tr> <th>Name</th>  <th>Account Number</th> <th>Type</th> <th>Balance</th> </tr>";
   for(let i = 0; i < accountList.length; i++) {
     let account = accountList[i];
     let accountName = account.accountName;
     let balance = account.balance;
     let type = account.type;
-    htmls += "<tr> <td>"+ accountName +"</td> <td>"+ type +"</td> <td> $"+ balance +"</td> </tr>";
+    let number = account.accountNumber;
+    htmls += "<tr> <td>"+ accountName +"</td> <td>"+ number +"</td> <td>"+ type +"</td> <td> $"+ balance +"</td> </tr>";
 
   }
 
