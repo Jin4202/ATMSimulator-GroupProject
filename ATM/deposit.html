@@ -10,36 +10,26 @@
     <div onlineATM-html="homepageTemplete.html"></div>
     <div class="box">
     <div>
-      <p> Which account would you like to deposit to? </p>
+      <div class="upload">
+        <form action="uploadCheck.php" method="post" enctype="multipart/form-data">
+          <br><br>
+          <b>Please enter the exact amount on your check.</b>
+          <br><br>
+          <div id="accountList">
 
-      <select
-
-      name="list" id="list" accesskey="target">
-          <option value='none' selected>Checking</option>
-          <option value="resume.html">Savings</option>
-
-      </select>
-      <br>
-      <br>
-      <button type="button" onclick="window.location.href='depositCheck.html'">
-        Deposit via Check
-      </button>
-
-      <br>
-      <br>
-
-    <button type="button" name="button">Virtual Deposit</button>
-
-    <br>
-
-    <form action="deposit.php"method="post">
-      <div id="accountList">
-
+          </div>
+          <label for="money">Check Amount:</label><br>
+          <input type="number" name="money" min="0" max="1000000" value="0">
+          <br>
+          <b>Now select your check to deposit.</b>
+          <br><br>
+          Select check image to upload:
+          <input type="file" name="fileToUpload" id="fileToUpload">
+          <br><br>
+          <input
+          <input type="submit" value="Upload Check" name="submit">
+        </form>
       </div>
-      <input type="number" name="money" min="0" max="1000000">
-      <input type="submit" value="Submit">
-    </form>
-
     </div>
   </div>
   </body>
