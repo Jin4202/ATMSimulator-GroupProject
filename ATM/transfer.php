@@ -28,56 +28,86 @@
     $money = intval($_POST["money"]);
 
 
-    $sql = "SELECT accountList FROM accounts WHERE email = '$id'";
-    $results = mysqli_query($conn, $sql);;
-    if ($results) {
-      $row = mysqli_fetch_assoc($results);
 
-      $list = json_decode($row["accountList"]);
-      $balance = $list[$accountIndex]->balance;
+
+    $fromSQL = "SELECT accountList FROM accounts WHERE email = '$id'";
+    $toSQL = "SELECT accountList FROM accounts WHERE email = '$targetId'";
+
+    $fromConn = mysqli_query($conn, $fromSQL);
+    $toConn = mysqli_query($conn, $toSQL);
+
+    if($fromConn) {
+      $fromRow = mysqli_fetch_assoc($fromConn);
+
+      // check 'from' account exist & money is in proper range.
+      $fromList = json_decode($fromRow["accountList"]);
+      $fromBalance = $fromList[$accountIndex]->balance;
       if($money < 0) {
         echo "Please type postive number.";
-        return;
-      } else if($money > $balance) {
+      } else if($money > $fromBalance) {
         echo "You do not have enough money. Please check your account.";
-        return;
       } else {
-        $list[$accountIndex]->balance = $balance - $money;
-        $accountList = json_encode($list);
-      }
-      $sql = "UPDATE accounts SET accountList='$accountList' WHERE email = '$id'";
-      if ($conn->query($sql) === TRUE) {
-        $sql = "SELECT accountList FROM accounts WHERE email = '$targetId'";
-        $results = mysqli_query($conn, $sql);
-        if ($results) {
-          $row = mysqli_fetch_assoc($results);
-          $list = json_decode($row["accountList"]);
+
+        // check 'to' account exist
+        if($toConn) {
+          $toRow = mysqli_fetch_assoc($toConn);
+          if(!isset($toRow["accountList"])) {
+            echo "Couldn't find.";
+          }
+          $toList = json_decode($toRow["accountList"]);
           $isSet = false;
-          for($i = 0; $i < count($list); $i++) {
-            if($list[$i]->accountNumber == $targetNumber) {
-              $list[$i]->balance = $list[$i]->balance + $money;
+          $toIndex = -1;
+          for($i = 0; $i < count($toList); $i++) {
+            if($toList[$i]->accountNumber == $targetNumber) {
+              $toIndex = $i;
               $isSet = true;
             }
           }
+
           if($isSet) {
-            $sql = "UPDATE accounts SET accountList='$accountList' WHERE email = '$targetId'";
-            $results = mysqli_query($conn, $sql);
-            if ($results) {
-              echo "Successfully transferred.";
+            // when you transfer in same user account.
+            if($id == $targetId) {
+              $fromList[$accountIndex]->balance = $fromBalance - $money;
+              $fromList[$toIndex]->balance += $money;
+              $fromAccountList = json_encode($fromList);
+              $sql = "UPDATE accounts SET accountList='$fromAccountList' WHERE email = '$id';";
+              $result = mysqli_query($conn, $sql);
+              if($result) {
+                echo "Successfully transferred.";
+              } else {
+                echo "Unexpected Error. Could not connect to the server.";
+              }
             } else {
-              echo "Unexpected error due to connection to the server.";
+
+              // 'from' account
+              $fromList[$accountIndex]->balance = $fromBalance - $money;
+              $fromAccountList = json_encode($fromList);
+
+              // 'to' account
+              $toList[$toIndex]->balance += $money;
+              $toAccountList = json_encode($toList);
+
+              // UPDATE
+              $sql = "UPDATE accounts SET accountList='$fromAccountList' WHERE email = '$id';";
+              $sql .= "UPDATE accounts SET accountList='$toAccountList' WHERE email = '$targetId';";
+              $result = mysqli_multi_query($conn, $sql);
+              if($result) {
+                echo "Successfully transferred.";
+              } else {
+                echo "Unexpected Error. Could not connect to the server.";
+              }
             }
+
           } else {
-            echo "We could not find the matching account.";
+            echo "We could not find the account.";
           }
         } else {
-          echo "We can not find the matching user.";
+          echo "We could not find the user.";
         }
-      } else {
-        echo "Error: " . $sql . "<br>" . $conn->error;
       }
+
     } else {
-      echo "Failed to connect to the server.";
+      echo "Unexpected Error. Could not connect to the server.";
     }
 
     mysqli_close($conn);
