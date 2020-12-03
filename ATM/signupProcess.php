@@ -53,7 +53,7 @@
             $sql = "SELECT email FROM accounts WHERE email = '$email';";
             $duplicated = mysqli_query($conn, $sql);
             $row = mysqli_fetch_assoc($duplicated);
-            if ($row["email"] === $email) {
+            if (isset($row["email"])) {
               echo "The user is already exist. (The email is already used.)";
             } else {
               $sql = "INSERT INTO accounts (email, password, firstname, lastname, phone, ssn, pin, accountList) VALUES ('$email', '$pw', '$fname', '$lname', '$phone', '$ssn', '$pin', '$accounts')";
