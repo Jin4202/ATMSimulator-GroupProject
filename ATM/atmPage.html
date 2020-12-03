@@ -1,0 +1,30 @@
+<html>
+  <head>
+    <title>ATM</title>
+    <link rel="stylesheet" href="../homepageStyle.css">
+  </head>
+  <body>
+
+    <h1>ATM</h1>
+    <hr>
+
+    <div onlineATM-html="atmHomeTemplete.html"></div>
+    <div>
+      <label for="withdrawATM" id="title"><h2>Withdraw</h2></label>
+
+      <form action=""method="">
+        <p>Which account would you like to withdraw from?</p>
+        <select id="accounts" name="index">
+          </select>
+        <p>Amount to be withdrawn</p>
+        <input type="number" min="0" max="100000">
+        <button type="submit" name="button" id="Withdrawal">Confirm Withdrawal</button>
+        </form>
+
+        </div>
+
+    </body>
+    <script src="templete.js"></script>
+    <script>includeHTML();</script>
+
+</html>
