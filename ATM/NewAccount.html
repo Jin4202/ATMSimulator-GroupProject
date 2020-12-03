@@ -13,24 +13,26 @@ body {
   </head>
   <body>
 
-    <h1>Accounts Information</h1>
+    <h1><span class="textback">Accounts Information</span></h1>
 
     <div onlineATM-html="homepageTemplete.html"></div>
 
     <div class="NewAccount">
       <div class="box">
-      <label for="new_account" id="title"><h2>Opening New Account</h2></label>
+      <label for="new_account" id="title"><h2><span class="textback">Opening New Account</span></h2></label>
+
 
       <form action="addingAccount.php" method="post">
         <label>SSN:</label>
-        <input type="text" id="ssn" name="ssn" pattern="[0-9]{3}-[0-9]{2}-[0-9]{4}">
+        <input type="text" id="ssn" name="ssn" pattern="[0-9]{9}">
         <p>Choose Account Type:</p>
         <input type="radio" name="type" value="Checking">
-        <label for="checking"> Checking</label>
+        <label for="checking"><span class="textback"> Checking</span></label>
         <br>
         <input type="radio" name="type" value="Saving">
-        <label for="savings"> Savings </label>
+        <label for="savings"><span class="textback">Savings</span></label>
         <br>
+        </br>
         <input type="submit">
       </form>
     </div>
@@ -38,7 +40,7 @@ body {
 
     <div class="centerTest">
     <div class="ManageAccount">
-      <label for="new_account" id="title"><h2>Managing Accounts</h2></label>
+      <label for="new_account" id="title"><h2><span class="textback">Managing Accounts</h2></span></label>
       <button type="button" onclick="edit()">Edit</button>
         <form action="changingAccountName.php" method="post">
           <div class="managingTable">
@@ -49,8 +51,8 @@ body {
     </div>
 
     <div class="DeleteAccount">
-      <label for="new_account" id="title"><h2>Delete an Account</h2></label>
-      <p>Choose the account: </p>
+      <label for="new_account" id="title"><h2><span class="textback">Delete an Account</h2></span></label>
+      <p><span class="textback">Choose the account:<span class="textback"></p>
       <form action="deleteAccount.php" method="post">
         <select id="accounts" name="index">
 

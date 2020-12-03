@@ -5,20 +5,20 @@
   </head>
   <body>
 
-    <h1>Transfer</h1>
+    <h1><span class="textback">Transfer</span></h1>
 
     <div onlineATM-html="homepageTemplete.html"></div>
 
     <div class="content">
       <form class="transfer" action="transfer.php" method="post">
-        <p>Transfer From</p>
+        <p><span class="textback">Transfer From</span></p>
         <div id="accountList">
 
         </div>
 
-        <span>Transfer To</span><br>
-        <label for="targetId"> Email: <input type="text" name="targetId" value=""> </label> <br>
-        <label for="targetNumber"> Account Number: <input type="text" name="targetNumber" value=""> </label>
+        <span><span class="textback">Transfer To</span></span><br>
+        <label for="targetId"> <span class="textback">Email: </span><input type="text" name="targetId" value=""> </label> <br>
+        <label for="targetNumber"><span class="textback"> Account Number: </span><input type="text" name="targetNumber" value=""> </label>
         <br><br>
         <span>Amount: </span> <input type="number" name="money" min="0" max="1000000" value="0">
         <br>
