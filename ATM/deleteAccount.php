@@ -26,19 +26,22 @@
     $results = mysqli_query($conn, $sql);;
     if ($results) {
       $row = mysqli_fetch_assoc($results);
+      if(isset($row["accountList"])) {
+        $list = json_decode($row["accountList"]);
+        $index = $_POST["index"];
+        array_splice($list, $index, 1);
+        $accountList = json_encode($list);
 
-      $list = json_decode($row["accountList"]);
-      $index = $_POST["index"];
-      array_splice($list, $index, 1);
-      $accountList = json_encode($list);
+        $sql = "UPDATE accounts SET accountList='$accountList' WHERE email = '$id'";
 
-      $sql = "UPDATE accounts SET accountList='$accountList' WHERE email = '$id'";
-
-      if ($conn->query($sql) === TRUE) {
-        $message = "Your account has successfully deleted.";
-        echo "<script>alert('$message');</script>";
+        if ($conn->query($sql) === TRUE) {
+          $message = "Your account has successfully deleted.";
+          echo "<script>alert('$message');</script>";
+        } else {
+          echo "Error: " . $sql . "<br>" . $conn->error;
+        }
       } else {
-        echo "Error: " . $sql . "<br>" . $conn->error;
+        echo "There is no account left.";
       }
     } else {
       echo "Failed to connect to the server.";

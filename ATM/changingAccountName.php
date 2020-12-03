@@ -22,6 +22,8 @@
       die("Connection failed: " . $conn->connect_error);
     }
 
+    $validName = true;
+
     $sql = "SELECT accountList FROM accounts WHERE email = '$id'";
     $results = mysqli_query($conn, $sql);;
     if ($results) {
@@ -35,6 +37,7 @@
             $list[$i]->accountName = $name;
           } else {
             echo "Invalid account name included.";
+            $validName = false;
           }
         } else {
           echo "Failed to editing accounts";
@@ -44,11 +47,11 @@
 
       $sql = "UPDATE accounts SET accountList='$accountList' WHERE email = '$id'";
 
-      if ($conn->query($sql) === TRUE) {
+      if ($conn->query($sql) === TRUE && $validName) {
         $message = "Your accounts have successfully edited.";
         echo "<script>alert('$message');</script>";
       } else {
-        echo "Error: " . $sql . "<br>" . $conn->error;
+        echo "Failed to change account names";
       }
     } else {
       echo "Failed to connect to the server.";
