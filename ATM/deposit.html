@@ -33,12 +33,16 @@
     <br>
 
     <form action="deposit.php"method="post">
-      <input type="number" name="money" min="0" max="1000000">
+      <div id="accountList">
 
+      </div>
+      <input type="number" name="money" min="0" max="1000000">
+      <input type="submit" value="Submit">
     </form>
     </div>
   </div>
   </body>
+  <script src="deposit.js"></script>
   <script src="templete.js"></script>
   <script>
     includeHTML();

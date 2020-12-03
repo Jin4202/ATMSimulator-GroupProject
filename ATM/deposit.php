@@ -25,20 +25,30 @@
       }
 
       $money = intval($_POST["money"]);
+      $accountIndex = intval($_POST["accountIndex"]);
       if($money < 0) {
-            echo "Please type postive number.";
+        echo "Please type postive number.";
       } else {
-        echo "Please fill out the blanks";
+        $sql = "SELECT accountList FROM accounts WHERE email = '$id'";
+        $result = mysqli_query($conn, $sql);
+        if($result) {
+          $row = mysqli_fetch_assoc($result);
+          $list = json_decode($row["accountList"]);
+          $list[$accountIndex]->balance += $money;
+          $accountList = json_encode($list);
+          $sql = "UPDATE accounts SET accountList='$accountList' WHERE email = '$id';";
+          $result = mysqli_query($conn, $sql);
+          if($result) {
+            echo "Successfully transferred.";
+          } else {
+            echo "Unexpected Error. Could not connect to the server.";
+          }
+        }
       }
-
-
       mysqli_close($conn);
       ?>
       <p>Back to the Deposit page.</p>
       <button type="button" onclick="window.location.href = 'deposit.html';">Back</button>
     </div>
-
-
-
   </body>
 </html>
