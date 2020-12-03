@@ -10,45 +10,28 @@
 
     <div onlineATM-html="homepageTemplete.html"></div>
 
-    <div class="dropdown">
-        <button class="dropbtn">Transfer from
-          <i class="fa fa-caret-down"></i>
-        </button>
-        <div class="dropdown-content">
-          <a href="#">Checking 1</a>
-          <a href="#">Savings 1</a>
-          <a href="#">Checking 2</a>
-        </div>
-    </div>
+    <div class="content">
+      <form class="transfer" action="transfer.php" method="post">
+        <p>Transfer From</p>
+        <div id="accountList">
 
-    <div class="dropdown">
-        <button class="dropbtn">Transfer to
-          <i class="fa fa-caret-down"></i>
-        </button>
-        <div class="dropdown-content">
-          <a href="#">Checking 1</a>
-          <a href="#">Savings 1</a>
-          <a href="#">Checking 2</a>
         </div>
-    </div>
 
-    <div>
-      <form action="/action_page.php"> <!-- write action page php later-->
-        <label for="amount">Amount:</label>
-        <input type="text" id="amount" name="amount"><br><br>
-        <input type="submit" onclick="myFunction()" value="Submit">
+
+        <span>Transfer To</span><br>
+        <label for="targetId"> Email: <input type="text" name="targetId" value=""> </label> <br>
+        <label for="targetNumber"> Account Number: <input type="text" name="targetNumber" value=""> </label>
+        <br><br>
+        <span>Amount: </span> <input type="text" name="money" value="0">
+        <br>
+        <button type="submit" name="button">Send</button>
       </form>
     </div>
 
 
-    <script>
-      function myFunction() {
-        alert("Transfer submitted.");
-        window.location.replace("home.html");
-      }
-    </script>
 
   </body>
+  <script src="transfer.js"></script>
   <script src="templete.js"></script>
   <script>
     includeHTML();
