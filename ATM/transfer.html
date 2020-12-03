@@ -20,7 +20,7 @@
         <label for="targetId"> Email: <input type="text" name="targetId" value=""> </label> <br>
         <label for="targetNumber"> Account Number: <input type="text" name="targetNumber" value=""> </label>
         <br><br>
-        <span>Amount: </span> <input type="text" name="money" value="0">
+        <span>Amount: </span> <input type="number" name="money" min="0" max="1000000" value="0">
         <br>
         <button type="submit" name="button">Send</button>
       </form>

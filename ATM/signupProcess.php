@@ -19,8 +19,8 @@
       if ($conn->connect_error) {
         die("Connection failed: " . $conn->connect_error);
       }
-      if (isset($_POST["email"]) && isset($_POST["password"]) && isset($_POST["fname"]) && isset($_POST["lname"]) && isset($_POST["phone"]) && isset($_POST["ssn"])&& isset($_POST["pin"])) {
-        if($_POST['email'] && $_POST['password'] && $_POST['fname'] && $_POST['lname'] && $_POST['phone'] && $_POST['ssn'] && $_POST['pin']) {
+      if (isset($_POST["email"]) && isset($_POST["password"]) && isset($_POST["fname"]) && isset($_POST["lname"]) && isset($_POST["phone"]) && isset($_POST["ssn"])&& isset($_POST["pin"]) && isset($_POST['type'])) {
+        if($_POST['email'] && $_POST['password'] && $_POST['fname'] && $_POST['lname'] && $_POST['phone'] && $_POST['ssn'] && $_POST['pin'] && $_POST['type']) {
           // collect value of input field
           $email = $_POST['email'];
           $pw = $_POST['password'];
@@ -49,13 +49,21 @@
             $account->accountNumber = $accountNumber;
             $accounts = json_encode(array($account));
 
-            $sql = "INSERT INTO accounts (email, password, firstname, lastname, phone, ssn, pin, accountList) VALUES ('$email', '$pw', '$fname', '$lname', '$phone', '$ssn', '$pin', '$accounts')";
-
-            if ($conn->query($sql) === TRUE) {
-              $message = "Your account successfully created.";
-              echo "<script>alert('$message');</script>";
+            // check the duplicity of the account
+            $sql = "SELECT email FROM accounts WHERE email = '$email';";
+            $duplicated = mysqli_query($conn, $sql);
+            $row = mysqli_fetch_assoc($duplicated);
+            if ($row["email"] === $email) {
+              echo "The user is already exist. (The email is already used.)";
             } else {
-              echo "Error: " . $sql . "<br>" . $conn->error;
+              $sql = "INSERT INTO accounts (email, password, firstname, lastname, phone, ssn, pin, accountList) VALUES ('$email', '$pw', '$fname', '$lname', '$phone', '$ssn', '$pin', '$accounts')";
+
+              if ($conn->query($sql) === TRUE) {
+                $message = "Your account successfully created.";
+                echo "<script>alert('$message');</script>";
+              } else {
+                echo "Error: " . $sql . "<br>" . $conn->error;
+              }
             }
           } else {
             echo "Failed to connect to global table.";

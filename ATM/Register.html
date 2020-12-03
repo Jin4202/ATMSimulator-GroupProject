@@ -20,19 +20,19 @@
       <input type="text" id="lname" name="lname"><br>
 
       <label for="email">Email:</label><br>
-      <input type="text" id="email" name="email"><br>
+      <input type="email" id="email" name="email" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$" title="Please type an email. (xxx@xxx.xxx)"><br>
 
       <label for="#number">Phone number:</label><br>
-      <input type="text" id="#number" name="phone"><br>
+      <input type="tel" id="phone" name="phone" pattern="[0-9]{10}" title="Please type a phone number. (10 degits, without '-')"><br>
 
       <label for="password">Password:</label><br>
       <input type="text" id="password" name="password"><br>
 
       <label for="ssn">SSN:</label><br>
-      <input type="text" id="ssn" name="ssn"><br>
+      <input type="text" id="ssn" name="ssn" pattern="[0-9]{9}" title="Please type a ssn. (9 degits)"><br>
 
       <label for="ssn">PIN:</label><br>
-      <input type="text" id="pin" name="pin"><br>
+      <input type="text" id="pin" name="pin" pattern="[0-9]{4}" title="Please type a pin number. (4 degits)"><br>
 
       <p> Which account would you like to open today?</p> <br>
       <input type="radio" name="type" value="Checking">

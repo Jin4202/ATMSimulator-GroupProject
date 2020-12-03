@@ -23,7 +23,7 @@ body {
 
       <form action="addingAccount.php" method="post">
         <label>SSN:</label>
-        <input type="text" name="ssn">
+        <input type="text" id="ssn" name="ssn" pattern="[0-9]{3}-[0-9]{2}-[0-9]{4}">
         <p>Choose Account Type:</p>
         <input type="radio" name="type" value="Checking">
         <label for="checking"> Checking</label>
