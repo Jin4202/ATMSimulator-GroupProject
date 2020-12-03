@@ -49,8 +49,8 @@
       }
 
       if(isset($_POST["money"]) && isset($_POST["accountIndex"])) {
-        if(gettype($_POST["money"]) == "integer") {
-          $money = $_POST["money"];
+        if($_POST["money"] !== "") {
+          $money = intval($_POST["money"]);
           $accountIndex = intval($_POST["accountIndex"]);
 
           $sql = "SELECT accountList FROM accounts WHERE email = '$id'";
@@ -94,10 +94,10 @@
             echo "Could not find the user.";
           }
         } else {
-          echo "Please fill in the blanks.";
+          echo "Please fill in the blanks. The amount section is empty.";
         }
       } else {
-        echo "Please fill in the blanks.";
+        echo "Please fill in the blanks. Failed to send data to server.";
       }
 
       ?>
