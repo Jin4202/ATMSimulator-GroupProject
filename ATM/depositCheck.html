@@ -1,0 +1,36 @@
+<html>
+  <head>
+    <title>Online ATM</title>
+    <link rel="stylesheet" href="../homepageStyle.css">
+    <title>Image Upload</title>
+  </head>
+  <body>
+
+    <h1><span class="textback">Online ATM</span></h1>
+    <div onlineATM-html="homepageTemplete.html"></div>
+
+    <div class="upload">
+      <span class="textback">
+      <br><br>
+      <b>Please enter the exact amount on your check.</b>
+      <br><br>
+      <label for="checkAmount">Check Amount:</label><br>
+      <input type="text" id="checkAmount" name="checkAmount"><br>
+      <br>
+      <b>Now select your check to deposit.</b>
+      <br><br>
+      <form action="uploadCheck.php" method="post" enctype="multipart/form-data">
+        Select check image to upload:
+        <input type="file" name="fileToUpload" id="fileToUpload">
+        <br><br>
+        <input
+        <input type="submit" value="Upload Check" name="submit">
+      </form>
+    </span>
+    </div>
+  </body>
+  <script src="templete.js"></script>
+  <script>
+    includeHTML();
+  </script>
+</html>
