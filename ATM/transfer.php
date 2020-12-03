@@ -24,8 +24,8 @@
         die("Connection failed: " . $conn->connect_error);
       }
 
-      if(isset($_POST["accountIndex"]) && isset($_POST["targetId"]) && isset($_POST["targetNumber"]) && isset($_POST["accountIndex"])) {
-        if($_POST["accountIndex"] && $_POST["targetId"] && $_POST["targetNumber"] && $_POST["accountIndex"]) {
+      if(isset($_POST["accountIndex"]) && isset($_POST["targetId"]) && isset($_POST["targetNumber"]) && isset($_POST["money"])) {
+        if($_POST["accountIndex"] && $_POST["targetId"] && $_POST["targetNumber"] && $_POST["money"]) {
 
           $accountIndex = intval($_POST["accountIndex"]);
           $targetId = $_POST["targetId"];
@@ -52,19 +52,21 @@
 
               // check 'to' account exist
               if($toConn) {
+                $isSet = false;
                 $toRow = mysqli_fetch_assoc($toConn);
                 if(!isset($toRow["accountList"])) {
                   echo "Couldn't find.";
-                }
-                $toList = json_decode($toRow["accountList"]);
-                $isSet = false;
-                $toIndex = -1;
-                for($i = 0; $i < count($toList); $i++) {
-                  if($toList[$i]->accountNumber == $targetNumber) {
-                    $toIndex = $i;
-                    $isSet = true;
+                } else {
+                  $toList = json_decode($toRow["accountList"]);
+                  $toIndex = -1;
+                  for($i = 0; $i < count($toList); $i++) {
+                    if($toList[$i]->accountNumber == $targetNumber) {
+                      $toIndex = $i;
+                      $isSet = true;
+                    }
                   }
                 }
+
 
                 if($isSet) {
                   // when you transfer in same user account.
