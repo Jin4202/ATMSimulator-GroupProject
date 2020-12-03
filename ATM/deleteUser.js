@@ -4,6 +4,10 @@ function confirmAccountDeletion() {
     alert("Thank you for deleting your bank account");
     window.location.href = "../index.html";
   }
+  else
+  {
+    window.location.href ='User Information.html'
+  }
 }
 
 function deleteUser() {
