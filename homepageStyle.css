@@ -4,7 +4,10 @@ div {
 }
 
 html {
-  background-color: #ff4242;
+  background-image: url('robinthebank.png');
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-size: cover;
 }
 
 header img {

@@ -1,4 +1,12 @@
 <html>
+<style>
+body {
+  background-image: url('robinthebank.png');
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-size: cover;
+}
+</style>
   <head>
     <title>Accounts Information</title>
     <link rel="stylesheet" href="../homepageStyle.css">
@@ -10,6 +18,7 @@
     <div onlineATM-html="homepageTemplete.html"></div>
 
     <div class="NewAccount">
+      <div class="box">
       <label for="new_account" id="title"><h2>Opening New Account</h2></label>
 
       <form action="addingAccount.php" method="post">
@@ -24,6 +33,7 @@
         <br>
         <input type="submit">
       </form>
+    </div>
     </div>
 
     <div class="centerTest">
