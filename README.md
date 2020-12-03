@@ -13,3 +13,7 @@ column:
 * ssn: varchar(255)
 * pin: varchar(255)
 * accountList: mediumtext
+
+table name: global\
+column:
+* accountNumber: int(255), Primary, AUTO_INCREMENT; AUTO_INCREMENT = 1000001;
