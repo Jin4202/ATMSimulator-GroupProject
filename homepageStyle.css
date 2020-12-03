@@ -117,7 +117,12 @@ table {
 
 .textback
 {
+    font-family: 'Comic Sans MS';
     border-radius: 10px;
     background-color: #FF6961;
     padding: 3px;
+}
+
+p{
+  font-size: 20px;
 }
