@@ -82,3 +82,13 @@ div{
   margin-left: auto;
   margin-right: auto;
 }
+
+.managingTable table {
+  margin-left: auto;
+ margin-right: auto;
+}
+
+#accountList table {
+  margin-left: auto;
+ margin-right: auto;
+}
