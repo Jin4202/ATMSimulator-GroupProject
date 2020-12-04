@@ -25,7 +25,6 @@
       }
 
       if(isset($_POST["accountIndex"]) && isset($_POST["targetId"]) && isset($_POST["targetNumber"]) && isset($_POST["money"])) {
-        if($_POST["accountIndex"] && $_POST["targetId"] && $_POST["targetNumber"] && $_POST["money"]) {
 
           $accountIndex = intval($_POST["accountIndex"]);
           $targetId = $_POST["targetId"];
@@ -113,11 +112,8 @@
           } else {
             echo "Unexpected Error. Could not connect to the server.";
           }
-        } else {
-          echo "Please fill out the blanks";
-        }
       } else {
-        echo "Please fill out the blanks";
+        echo "Please fill out the blanks1";
       }
 
 
