@@ -39,6 +39,10 @@ div{
   text-align: center;
 }
 .managingTable {
+  font-family: 'Comic Sans MS';
+  border-radius: 7px;
+  background-color: #FF6961;
+  padding: 3px;
   text-align: center;
 }
 
@@ -97,6 +101,10 @@ div{
 }
 
 .centerTable{
+  font-family: 'Comic Sans MS';
+  border-radius: 7px;
+  background-color: #FF6961;
+  padding: 3px;
   margin-left: auto;
   margin-right: auto;
 }
@@ -104,9 +112,17 @@ div{
 .managingTable table {
   margin-left: auto;
   margin-right: auto;
+  font-family: 'Comic Sans MS';
+  border-radius: 7px;
+  background-color: #FF6961;
+  padding: 3px;
 }
 
 #accountList table {
+  font-family: 'Comic Sans MS';
+  border-radius: 7px;
+  background-color: #FF6961;
+  padding: 3px;
   margin-left: auto;
   margin-right: auto;
 }
