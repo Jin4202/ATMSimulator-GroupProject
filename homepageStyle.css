@@ -44,6 +44,8 @@ div{
   background-color: #FF6961;
   padding: 3px;
   text-align: center;
+  margin-left: auto;
+  margin-right: auto;
 }
 
 .login {
@@ -98,6 +100,8 @@ div{
 .centerTest {
   width:100%;
   text-align:center;
+  margin-left: auto;
+  margin-right: auto;
 }
 
 .centerTable{
@@ -123,12 +127,15 @@ div{
   border-radius: 7px;
   background-color: #FF6961;
   padding: 3px;
+  width:50px
   margin-left: auto;
   margin-right: auto;
 }
 
 table {
   text-align: center;
+  margin-left: auto;
+  margin-right: auto;
 }
 
 .textback
